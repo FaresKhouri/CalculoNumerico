@@ -1,0 +1,3 @@
+O algoritmo implementado consiste seus dados de entrada, para conseguir fazer a conversao de base.
+Consiste se o numero confere com a base que esta, verifica se as bases informadas estao corretas, e so fazes transformacao da base 2 ate a 36.
+O algotimos sempre usa a BASE10 como auxiliar para converter as bases.
