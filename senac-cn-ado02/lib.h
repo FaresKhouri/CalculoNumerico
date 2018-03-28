@@ -1,4 +1,4 @@
-int fatorial(int n);
+double fatorial(double n);
 
 double cosseno(float x);
 

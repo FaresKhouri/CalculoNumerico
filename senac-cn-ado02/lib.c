@@ -2,10 +2,10 @@
 #include <math.h>
 #include <stdlib.h>
 
-int fatorial(int n){
-    int i, f =1;
+double fatorial(double n){
+    double i, f =1;
     
-    for(i=1;i<=n;i++){
+    for(i=n;i>0;i--){
         f=f*i;
     }
     
@@ -15,7 +15,7 @@ int fatorial(int n){
 double cosseno(double x){
     int n;
     double c = 0.0;
-    for(n=0; n<= 6; n++){
+    for(n=0; n<= 30; n++){
         c = c + (pow(-1,n) * pow(x,2*n))/fatorial(2*n);
     }
 
@@ -25,7 +25,7 @@ double cosseno(double x){
 double seno(double x){
     int n;
     double c = 0.0;
-    for(n=0; n<= 6; n++){
+    for(n=0; n<= 30; n++){
         c = c + (pow(-1,n) * pow(x,2*n+1))/fatorial(2*n + 1);
     }
 
