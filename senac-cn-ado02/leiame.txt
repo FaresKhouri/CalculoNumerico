@@ -1,2 +1,2 @@
 O algoritmo implementado consiste implementar o seno e cosseno, utilizando a serie de talor.
-fizemos o algoritmo com precisao igual a N=5, onde os radiandos variam de 0 a 4PI
+fizemos o algoritmo com precisao igual a N=30, onde os radiandos variam de 0 a 4PI

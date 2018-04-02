@@ -1,0 +1,2 @@
+O algoritmo implementado consiste implementar a resoluçao o 'e', utilizando um limite.
+fizemos o algoritmo com precisao igual de x variando de 10^0 a 10^20
