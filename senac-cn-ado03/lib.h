@@ -1,5 +1,5 @@
-float feuler(float x);
+void eulerFloat(FILE *fp); 
 
-double deuler(double x);
+void eulerDouble(FILE *fp); 
 
-long double ldeuler(double x);
+void eulerLongDouble(FILE *fp); 

@@ -1,44 +1,24 @@
 #include <stdio.h>
-#include <math.h>
-#include <tgmath.h>
 #include <stdlib.h>
+#include <math.h>
+#include "lib.h"
 
-float feuler(float x){
-    float n = x;
-    if(x == 0){
-       n=1;
-    }
-    
-    n= 1+(1.0/n);
+void eulerFloat(FILE *fp){	
+	for(float n = 1; n <= 10e20; n *= 5){
+		float x = powf(1 + (1/n), n);
+		fprintf(fp, "%f %f\n", n, x); 
+	}
 
-    n = powf(n,x);
-
-    return n;
 }
-
-double deuler(double x){
-    double n = x;
-    if(x == 0){
-       n=1;
-    }
-    
-    n= 1+(1.0/n);
-
-    n = pow(n,x);
-
-    return n;
+void eulerDouble(FILE *fp){
+	for(double n = 1; n <= 10e20; n *= 5){
+		double x = pow(1 + (1/n), n);
+		fprintf(fp, "%lf %lf\n", n, x); 
+	}
 }
-
-long double ldeuler(double x){
-    long double n = x;
-    if(x == 0){
-       n=1;
-    }
-    
-    n= 1+(1.0/n);
-
-    n = powl(n,x);
-
-    return n;
-}
-
+void eulerLongDouble(FILE *fp){
+	for(long double n = 1; n <= 10e20; n *= 5){
+		long double x = powl(1 + (1/n), n);
+		fprintf(fp, "%LF %LF\n", n, x); 
+	}
+} 
