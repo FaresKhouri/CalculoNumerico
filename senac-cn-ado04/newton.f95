@@ -1,0 +1,37 @@
+PROGRAM NEWTON
+    IMPLICIT NONE
+    CHARACTER(LEN=12):: INPUT
+    REAL:: VALUE
+    CALL GETARG(1, INPUT)
+    READ(INPUT, *) VALUE
+    PRINT *, GET_SQRT(VALUE, 1E-5)
+
+    CONTAINS
+    FUNCTION GET_SQRT(INPUT, TOLERANCE) RESULT(P)
+        REAL, INTENT(IN):: INPUT, TOLERANCE
+        REAL, PARAMETER:: MAX_ITERATION = 1E+6
+        REAL:: P, DERIVATIVE, INITIAL
+        INTEGER:: I = 0
+        INITIAL = INPUT
+100     IF (I .LT. MAX_ITERATION) THEN
+            P = INITIAL - ((INITIAL ** 2 - VALUE) / (2 * INITIAL))
+            IF (MOD(P - INITIAL).LT.TOLERANCE) RETURN
+            INITIAL = P
+            I = I + 1
+            GOTO 100
+        ELSE
+            P = -1
+        END IF
+    END FUNCTION GET_SQRT
+
+    FUNCTION MOD(VALUE) RESULT(J)
+        REAL, INTENT(IN):: VALUE
+        REAL:: J
+        IF (VALUE < 0) THEN
+            J = -VALUE
+        ELSE 
+            J = VALUE
+        END IF
+    END FUNCTION MOD
+
+END PROGRAM NEWTON
